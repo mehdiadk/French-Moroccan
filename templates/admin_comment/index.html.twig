@@ -3,21 +3,21 @@
 {% block title %}Comment index{% endblock %}
 
 {% block body %}
-    <h1>Comment index</h1>
+    <h1>Liste des commentaires</h1>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Content</th>
-                <th>CreatedAt</th>
+                
+                <th>Contenu</th>
+                <th>Créer le</th>
                 <th>actions</th>
             </tr>
         </thead>
         <tbody>
         {% for comment in comments %}
             <tr>
-                <td>{{ comment.id }}</td>
+                
                 <td>{{ comment.content }}</td>
                 <td>{{ comment.createdAt ? comment.createdAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
@@ -27,11 +27,11 @@
             </tr>
         {% else %}
             <tr>
-                <td colspan="4">no records found</td>
+                <td colspan="4">Pas d'enregistrement</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('app_admin_comment_new') }}">Create new</a>
+    <a href="{{ path('app_admin_comment_new') }}">Créer un nouveau commentaire</a>
 {% endblock %}
