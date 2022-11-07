@@ -1,19 +1,43 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}Accueil French Moroccan{% endblock %}
 
 {% block body %}
 
 
 
-<h1> Bienvenue sur le blog de French Moroccan</h1>
 
+
+<header class="bg-dark py-4">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-warning">
+            <h1 class="display-4 fw-bolder">French Moroccan</h1>
+            <p class="lead fw-normal text-orange-50 mb-0">Bienvenue sur le blog du restaurant French Moroccan</p>
+        </div>
+    </div>
+</header>
+<br>
 <img src={{asset ('images/maroc1.jpeg')}} width ="100%", background-size:cover>
 
-<p>
-    Des plats français et marocains
-</p>
 
 
+    <div class="container px-4 px-lg-4 mt-5">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-3 justify-content-center">
+            <div class="col mb-5">
+                <div class="card h-100">
+                    <!-- Product image-->
+                    <img class="card-img-top" src="images/couscous.jpg" alt="un couscous" />
+                    <!-- Product details-->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Product name-->
+                            <h5 class="fw-bolder">Couscous</h5>
+                            <!-- Product price-->
+                            $20.00 - $40.00
+                        </div>
+                    </div>
+
+                    
+                
 
 {% endblock %}

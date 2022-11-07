@@ -1,30 +1,30 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Comment{% endblock %}
+{% block title %}Commentaire{% endblock %}
 
 {% block body %}
-    <h1>Comment</h1>
+    <h1>Commentaire</h1>
 
     <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
+                <th>ID : </th>
                 <td>{{ comment.id }}</td>
             </tr>
             <tr>
-                <th>Content</th>
+                <th>Contenu :</th>
                 <td>{{ comment.content }}</td>
             </tr>
             <tr>
-                <th>CreatedAt</th>
+                <th>Créer le :</th>
                 <td>{{ comment.createdAt ? comment.createdAt|date('Y-m-d H:i:s') : '' }}</td>
             </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('app_admin_comment_index') }}">back to list</a>
+    <a href="{{ path('app_admin_comment_index') }}">Retour à la page précédente</a>
 
-    <a href="{{ path('app_admin_comment_edit', {'id': comment.id}) }}">edit</a>
+    <a href="{{ path('app_admin_comment_edit', {'id': comment.id}) }}">Modifier</a>
 
     {{ include('admin_comment/_delete_form.html.twig') }}
 {% endblock %}

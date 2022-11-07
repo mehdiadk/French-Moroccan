@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}User{% endblock %}
+{% block title %}Utilisateurs{% endblock %}
 
 {% block body %}
     <h1>Utilisateurs</h1>
@@ -18,8 +18,8 @@
             
           
             <tr>
-                <th>IsVerified</th>
-                <td>{{ user.isVerified ? 'Yes' : 'No' }}</td>
+                <th>Verifié ?</th>
+                <td>{{ user.isVerified ? 'Oui' : 'Non' }}</td>
             </tr>
         </tbody>
     </table>

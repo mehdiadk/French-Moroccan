@@ -1,11 +1,12 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Category{% endblock %}
+{% block title %}Modifier les pays{% endblock %}
 
 {% block body %}
     <h1>Modifier le pays</h1>
 
-    {{ include('admin_category/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('admin_category/_form.html.twig', {'button_label': 'Modifier'}) }}
+    
 
     <a href="{{ path('app_admin_category_index') }}">Retour à la liste des pays</a>
 
