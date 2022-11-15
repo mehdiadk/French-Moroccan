@@ -22,7 +22,7 @@ class ProfileController extends AbstractController
     public function show(): Response
     {
         $user = $this->getUser();
-        return $this->render('profile/show.html.twig', [
+        return $this->render('profile/show.html.twig', [ /* le render envoie le chemin */
             'user' => $user,
         ]);
     }

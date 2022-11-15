@@ -10,11 +10,11 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/admin/category')]
-class AdminCategoryController extends AbstractController
+#[Route('/admin/category')] // Le lien que je peux taper sur la barre de recherche afin de trouver le chemin
+class AdminCategoryController extends AbstractController // nouvelle classe créée et qui étend de AbstractController
 {
     #[Route('/', name: 'app_admin_category_index', methods: ['GET'])]
-    public function index(CategoryRepository $categoryRepository): Response
+    public function index(CategoryRepository $categoryRepository): Response // entre () les paramètres
     {
         return $this->render('admin_category/index.html.twig', [
             'categories' => $categoryRepository->findAll(),
@@ -69,7 +69,7 @@ class AdminCategoryController extends AbstractController
     #[Route('/{id}', name: 'app_admin_category_delete', methods: ['POST'])]
     public function delete(Request $request, Category $category, CategoryRepository $categoryRepository): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$category->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $category->getId(), $request->request->get('_token'))) {
             $categoryRepository->remove($category, true);
         }
 
