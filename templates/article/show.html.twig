@@ -5,6 +5,26 @@
 {% block body %}
     <h1>Plats</h1>
 
+    <div class="col-lg-3 col-md-4 mb-3">
+        <div class="card">
+          <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+            <img src="https://th.bing.com/th/id/OIP.PotAYS6tR7fxuPJeg3CuSwHaE8?pid=ImgDet&rs=1" class="img-fluid" />
+            <a href="#!">
+              <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+            </a>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Post title</h5>
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the bulk of the
+              card's content.
+            </p>
+           
+          </div>
+        </div>
+      </div>
+
+
     <table class="table">
         <tbody>
             
@@ -22,11 +42,18 @@
     <div>
        <a href="{{ path('app_comment_new', {'id': article.id }) }}"> Ajouter un commentaire </a>
     </div>
+<br>
+<br>
+<br>
+
+<h1> Les commentaires :</h1>
+
+<br>
 
     <div>
         {%  for comment in comments %}
-        <div> {{ comment.user.email}} a dit: </div>
-        <div> {{ comment.content }}</div>
+        <div> {{ comment.user.email}} a commenté: </div>
+        <div> contenu : {{ comment.content }} </div>
         {% endfor %}
     </div>
    
